@@ -1,0 +1,58 @@
+name: Blender 5.2 headless smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "configs/**"
+      - ".github/workflows/blender-smoke.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "configs/**"
+      - ".github/workflows/blender-smoke.yml"
+  workflow_dispatch:
+    inputs:
+      render_views:
+        description: "Additionally render eight turntable images (slower)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  headless:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      LIBGL_ALWAYS_SOFTWARE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender 5.2.1 LTS
+        uses: bradyajohnston/setup-blender@v5
+        with:
+          version: "5.2.1"
+      - name: Show Blender version
+        run: blender --version
+      - name: Build scene
+        run: blender --background --factory-startup --python-exit-code 1 --python scripts/build.py -- --output build/owli.blend
+      - name: Validate scene
+        run: blender --background build/owli.blend --python-exit-code 1 --python scripts/validate.py -- --output build/validation.json
+      - name: Render eight views (optional)
+        if: github.event_name == 'workflow_dispatch' && inputs.render_views
+        run: blender --background build/owli.blend --python-exit-code 1 --python scripts/render_turntable.py -- --output build/turntable
+      - name: Upload validation and sample scene
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: owli-blender-smoke
+          path: |
+            build/validation.json
+            build/owli.blend
+            build/turntable/*.png
+          if-no-files-found: warn
+          retention-days: 7

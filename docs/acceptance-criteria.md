@@ -3,8 +3,8 @@
 ## M0: infrastructure
 - [x] Traceable project structure, AGENTS instructions and Codex defaults.
 - [x] Static validation tests and GitHub Actions workflow defined.
-- [ ] Verified GitHub Actions run (requires remote Actions execution).
-- [ ] Local Blender 5.2 headless smoke build executed.
+- [x] Verified Python GitHub Actions run (ruff, compileall, pytest).
+- [ ] Blender 5.2.1 headless smoke workflow completed successfully.
 
 ## M1: blockout
 - [ ] Head/body/feet roughly respect 45/45/10 silhouette.

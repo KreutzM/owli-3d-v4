@@ -50,7 +50,7 @@ Start with: **"Implement the next uncompleted milestone in docs/roadmap.md. Exec
 - `tests/` and `.github/workflows/` – fast Python checks
 - `references/` – human-authoritative art reference
 
-The Blender part of the pipeline must be tested with Blender installed; GitHub Actions currently performs fast pure-Python checks only.
+GitHub Actions runs fast Python tests plus a separate Blender 5.2.1 headless smoke workflow. The smoke workflow validates a generated BLEND; eight rendered angles can additionally be requested through its manual workflow input. Visual similarity to the concept sheet still requires a human reference comparison.
 
 ## Safety and limitations
 
