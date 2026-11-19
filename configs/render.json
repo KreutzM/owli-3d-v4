@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "angles_deg": [0, 45, 90, 135, 180, 225, 270, 315],
+  "resolution_px": [640, 640],
+  "samples": 32,
+  "fps": 30,
+  "camera_ortho_scale": 3.8,
+  "camera_distance": 6.0,
+  "background_rgba": [0.95, 0.97, 1.0, 1.0],
+  "transparent_background": false
+}

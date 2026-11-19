@@ -1,0 +1,24 @@
+# Project-local Codex defaults. Loaded when this checkout is trusted.
+# No routine permission prompts; operations remain restricted to the workspace.
+model = "gpt-6.2-astra"
+model_reasoning_effort = "medium"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+allow_login_shell = false
+project_doc_max_bytes = 30000
+
+[sandbox_workspace_write]
+# Allows fetching documented dependencies and docs. Disable for offline runs.
+network_access = true
+
+[shell_environment_policy]
+inherit = "core"
+ignore_default_excludes = false
+
+[shell_environment_policy.filters]
+"AWS_*" = "exclude"
+"AZURE_*" = "exclude"
+"GOOGLE_*" = "exclude"
+"OPENAI_API_KEY" = "exclude"
+"GITHUB_TOKEN" = "exclude"
+"GH_TOKEN" = "exclude"

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "character": "Owli",
+  "variant": "Classic",
+  "stage": "blockout",
+  "seed": 42,
+  "height_m": 1.0,
+  "proportions": {
+    "head": 0.45,
+    "body": 0.45,
+    "legs": 0.10
+  },
+  "palette": {
+    "navy": "#0B234C",
+    "blue": "#0E6FC5",
+    "cyan": "#12D7EB",
+    "white": "#F9F9FB",
+    "orange": "#FF9A1F",
+    "yellow": "#FFD166"
+  },
+  "reference_image": "references/Owli_Character-Sheet.png"
+}

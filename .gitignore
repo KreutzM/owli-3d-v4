@@ -1,0 +1,31 @@
+# Generated character data
+/build/
+/dist/
+/renders/
+/reports/
+*.blend1
+*.blend2
+*.blend@
+*.blend?
+*.blend*.blend
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+# Local credentials/config
+.env
+.env.*
+!.env.example
+.secrets/
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+# No generated model/artifact outputs belong in Git outside approved releases.
