@@ -4,7 +4,7 @@
 - [x] Traceable project structure, AGENTS instructions and Codex defaults.
 - [x] Static validation tests and GitHub Actions workflow defined.
 - [x] Verified Python GitHub Actions run (ruff, compileall, pytest).
-- [ ] Blender 5.2.1 headless smoke workflow completed successfully.
+- [x] Blender 5.2.1 headless smoke workflow completed successfully (scene creation + structural validation).
 
 ## M1: blockout
 - [ ] Head/body/feet roughly respect 45/45/10 silhouette.

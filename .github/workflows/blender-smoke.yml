@@ -42,8 +42,8 @@ jobs:
         run: blender --background --factory-startup --python-exit-code 1 --python scripts/build.py -- --output build/owli.blend
       - name: Validate scene
         run: blender --background build/owli.blend --python-exit-code 1 --python scripts/validate.py -- --output build/validation.json
-      - name: Render eight views (optional)
-        if: github.event_name == 'workflow_dispatch' && inputs.render_views
+      - name: Render eight views (code push / pull request / optional manual)
+        if: github.event_name != 'workflow_dispatch' || inputs.render_views
         run: blender --background build/owli.blend --python-exit-code 1 --python scripts/render_turntable.py -- --output build/turntable
       - name: Upload validation and sample scene
         if: always()
