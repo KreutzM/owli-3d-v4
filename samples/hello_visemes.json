@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "audio": "hello_de.wav",
+  "duration": 1.2,
+  "cues": [
+    {"time": 0.0, "beak_open": 0.0},
+    {"time": 0.15, "beak_open": 0.6},
+    {"time": 0.4, "beak_open": 0.2},
+    {"time": 0.65, "beak_open": 0.8},
+    {"time": 0.9, "beak_open": 0.2},
+    {"time": 1.2, "beak_open": 0.0}
+  ]
+}
